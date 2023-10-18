@@ -8,7 +8,7 @@ const TopHeader = () => {
             <div className='container mx-auto flex justify-between items-center'>
                 <div className='sm:flex justify-between items-center gap-4 font-medium'>
                     <a className='flex justify-start items-center gap-1' href="tel:+880156602****"><BsFillTelephoneFill /> +8801500000000</a>
-                    <a className='flex justify-start items-center gap-1' href="mailto:epictechspot@gmail.com"><AiOutlineMail />epictechspot@gmail.com</a>
+                    <a className='flex justify-start items-center gap-1' href="mailto:epictechspot@gmail.com"><AiOutlineMail />eagletech@gmail.com</a>
                 </div>
                 <div className='flex text-2xl justify-end items-center gap-2'>
                     <a href="https://www.facebook.com/" target='_blank'><FaFacebook /></a>
