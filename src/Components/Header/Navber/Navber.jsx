@@ -2,10 +2,10 @@ import { Link, NavLink } from "react-router-dom"
 import { BsSearch } from 'react-icons/bs';
 const Navber = () => {
     const menus = <>
-        <li className="uppercase"><NavLink to={'/'}>Home</NavLink></li>
-        <li className="uppercase"><NavLink to={'/addproduct'}>Add Product</NavLink></li>
-        <li className="uppercase"><NavLink to={'/mycart'}>My Cart</NavLink></li>
-        <li className="uppercase"><NavLink to={'/login'}>Login</NavLink></li>
+        <li className="uppercase mx-1"><NavLink to={'/'}>Home</NavLink></li>
+        <li className="uppercase mx-1"><NavLink to={'/addproduct'}>Add Product</NavLink></li>
+        <li className="uppercase mx-1"><NavLink to={'/mycart'}>My Cart</NavLink></li>
+        <li className="uppercase mx-1"><NavLink to={'/login'}>Login</NavLink></li>
     </>
     return (
         <div className="">

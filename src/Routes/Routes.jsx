@@ -6,6 +6,7 @@ import {
 import Root from '../Pages/Root/Root';
 import Home from '../Pages/Home/Home';
 import Errorelemant from './Errorelemant';
+import AddProduct from '../Pages/AddProduct/AddProduct';
 
     const router = createBrowserRouter([
         {
@@ -16,6 +17,10 @@ import Errorelemant from './Errorelemant';
             {
               path: "/",
               element: <Home></Home>,
+            },
+            {
+              path: "/addproduct",
+              element: <AddProduct></AddProduct>,
             },
            
           ],
