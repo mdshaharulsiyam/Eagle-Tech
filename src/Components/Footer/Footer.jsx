@@ -4,8 +4,8 @@ import { AiFillInstagram,AiFillTwitterCircle } from 'react-icons/ai'
 import { FaFacebook } from 'react-icons/fa'
 const Footer = () => {
     return (
-        <div>
-            <footer className="footer p-10 bg-base-300 text-base-content">
+        <div className='bg-base-300'>
+            <footer className="footer p-10 container mx-auto text-base-content">
                 <nav className=''>
                     <Link to={'/'} className="flex gap-1 justify-start items-center">
                         <img className="w-16" src="/Eagle_Tech.png" alt="" />
