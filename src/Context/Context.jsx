@@ -1,13 +1,14 @@
 import React, { createContext } from 'react'
-export const EpicTechSpotContext = createContext(null)
+export const EagleTechSpotContext = createContext(null)
 const Context = ({children}) => {
+  const host  = "http://localhost:5000"
     const contextData = {
-       
+      host
       }
       return (
-        <EpicTechSpotContext.Provider value={contextData}>
+        <EagleTechSpotContext.Provider value={contextData}>
           {children}
-        </EpicTechSpotContext.Provider>
+        </EagleTechSpotContext.Provider>
       )
 }
 

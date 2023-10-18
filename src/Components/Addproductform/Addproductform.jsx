@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import Swal from 'sweetalert2';
+import { EagleTechSpotContext } from '../../Context/Context';
 
 const Addproductform = () => {
+    const {host}= useContext(EagleTechSpotContext)
+    const addproducts = document.querySelector('#addproducts')
     const addproduct =e=>{
         e.preventDefault()
         const form = e.target;
@@ -21,19 +25,50 @@ const Addproductform = () => {
             description
         }
         if (product && brand && type && image && price && Rating && description) {
-            if (Rating < 5) {
-                console.log(formdata)
+            if (Rating <=5) {
+                // console.log(formdata)
+                fetch(`${host}/addpost`, {
+                    method: 'POST',
+                    headers: {
+                      "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formdata)
+                  })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        // console.log(data)
+                        if (data.acknowledged) {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Your work has been saved',
+                                showConfirmButton: false,
+                                timer: 1500
+                              })
+                              addproducts.reset()
+                        }
+                    })
+                    .catch((error) => console.error('Error:', error));
+                  
             }else{
-                alert('rating should not be grater then 5')
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Rating should not be greater than 5',
+                  })
             }
         }else{
-            alert('please  fill all fill')
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please fill in all fields.',
+              })
         }
         
     }
     return (
         <div className='bg-[url("/ipbg.jpg")]'>
-            <form onSubmit={addproduct} className='container mx-auto text-center py-10'>
+            <form id='addproducts' onSubmit={addproduct} className='container mx-auto text-center py-10'>
                 <input type="text" placeholder="product Name" name='product' className="input input-bordered input-primary w-full max-w-xs m-1" />
                 <select name='brand' className="select select-primary w-full max-w-xs m-1">
                     <option value="" disabled selected>Choose brand</option>
@@ -52,11 +87,12 @@ const Addproductform = () => {
                     <option value="headphone">Headphone</option>
                     <option value="charger">Charger</option>
                     <option value="tablet">Tablet</option>
+                    <option value="tablet">Watch</option>
                 </select>
 
                 <input type="text" name='image' placeholder="image url" className="input input-bordered input-primary w-full max-w-xs m-1" /><br />
-                <input type="number" name='price' placeholder="Price" className="input input-bordered input-primary w-full max-w-xs m-1" />
-                <input type="number" name='Rating' placeholder="Rating 1 to 5" className="input input-bordered input-primary w-full max-w-xs m-1" /><br />
+                <input type="flot" name='price' placeholder="Price" className="input input-bordered input-primary w-full max-w-xs m-1" />
+                <input type="flot" name='Rating' placeholder="Rating 1 to 5" className="input input-bordered input-primary w-full max-w-xs m-1" /><br />
                 <textarea name='description' className="textarea textarea-primary w-full max-w-[650px] m-1" placeholder="description"></textarea><br />
                 <button className="btn btn-outline btn-success">add products</button>
             </form>
