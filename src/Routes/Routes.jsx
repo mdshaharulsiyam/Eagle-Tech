@@ -10,6 +10,10 @@ import AddProduct from '../Pages/AddProduct/AddProduct';
 import BrandsProducts from '../Pages/BrandsProducts/BrandsProducts';
 import Detailspage from '../Pages/Detailspage/Detailspage';
 import UpdatePage from '../Pages/UpdatePage/UpdatePage';
+import MyCart from '../Pages/MyCart/MyCart';
+import Login from '../Pages/Login/Login';
+import SignUp from '../Pages/Login/SignUp';
+import PrivetRoute from '../ProvetRoute/PrivetRoute';
     const router = createBrowserRouter([
         {
           path: "/",
@@ -22,7 +26,7 @@ import UpdatePage from '../Pages/UpdatePage/UpdatePage';
             },
             {
               path: "/addproduct",
-              element: <AddProduct></AddProduct>,
+              element: <PrivetRoute><AddProduct></AddProduct></PrivetRoute>,
             },
             {
               path: "/brandsproducts/:brand",
@@ -35,6 +39,18 @@ import UpdatePage from '../Pages/UpdatePage/UpdatePage';
             {
               path: "/update/:id",
               element: <UpdatePage></UpdatePage>,
+            },
+            {
+              path: "/mycart",
+              element: <MyCart></MyCart>,
+            },
+            {
+              path: "/login",
+              element: <Login></Login>,
+            },
+            {
+              path: "/signup",
+              element: <SignUp></SignUp>,
             },
           ],
         },

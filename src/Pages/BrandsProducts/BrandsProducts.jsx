@@ -12,7 +12,6 @@ const BrandsProducts = () => {
   const { brand } = parems
   const [loadin, setloading] = useState(true)
   const [productdata, setproductdata] = useState([]);
-  console.log(productdata);
   useEffect(() => {
     setloading(true)
     const fetchdata = async () => {
