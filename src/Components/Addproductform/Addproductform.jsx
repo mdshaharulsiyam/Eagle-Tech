@@ -3,9 +3,8 @@ import Swal from 'sweetalert2';
 import { EagleTechSpotContext } from '../../Context/Context';
 
 const Addproductform = () => {
-    const {host}= useContext(EagleTechSpotContext)
-    const addproducts = document.querySelector('#addproducts')
-    const addproduct =e=>{
+    const { host } = useContext(EagleTechSpotContext)
+    const addproduct = e => {
         e.preventDefault()
         const form = e.target;
         const product = form.product.value;
@@ -25,54 +24,54 @@ const Addproductform = () => {
             description
         }
         if (product && brand && type && image && price && Rating && description) {
-            if (Rating <=5) {
-                // console.log(formdata)
+            if (Rating <= 5) {
+
                 fetch(`${host}/addpost`, {
                     method: 'POST',
                     headers: {
-                      "Content-Type": "application/json"
+                        "Content-Type": "application/json"
                     },
                     body: JSON.stringify(formdata)
-                  })
+                })
                     .then((res) => res.json())
                     .then((data) => {
-                        // console.log(data)
+
                         if (data.acknowledged) {
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
-                                title: 'Your work has been saved',
+                                title: 'product added succesfully',
                                 showConfirmButton: false,
                                 timer: 1500
-                              })
-                              addproducts.reset()
+                            })
+                            e.target.reset()
                         }
                     })
                     .catch((error) => console.error('Error:', error));
-                  
-            }else{
+
+            } else {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Rating should not be greater than 5',
-                  })
+                })
             }
-        }else{
+        } else {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Please fill in all fields.',
-              })
+            })
         }
-        
+
     }
     return (
         <div className='bg-[url("/ipbg.jpg")]'>
-            <form id='addproducts' onSubmit={addproduct} className='container mx-auto text-center py-10'>
+            <form onSubmit={addproduct} className='container mx-auto text-center py-10'>
                 <input type="text" placeholder="product Name" name='product' className="input input-bordered input-primary w-full max-w-xs m-1" />
                 <select name='brand' className="select select-primary w-full max-w-xs m-1">
                     <option value="" disabled selected>Choose brand</option>
-                    <option value="apple">Apple</option>
+                    <option value="Apple">Apple</option>
                     <option value="Samsung">Samsung</option>
                     <option value="Sony">Sony</option>
                     <option value="Google">Google</option>

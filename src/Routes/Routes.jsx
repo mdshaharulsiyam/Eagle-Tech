@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
     createBrowserRouter,
   } from "react-router-dom";
@@ -8,7 +8,6 @@ import Home from '../Pages/Home/Home';
 import Errorelemant from './Errorelemant';
 import AddProduct from '../Pages/AddProduct/AddProduct';
 import BrandsProducts from '../Pages/BrandsProducts/BrandsProducts';
-
     const router = createBrowserRouter([
         {
           path: "/",
@@ -31,7 +30,5 @@ import BrandsProducts from '../Pages/BrandsProducts/BrandsProducts';
           ],
         },
       ]);
-
-
 
 export default router
