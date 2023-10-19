@@ -71,9 +71,9 @@ const SignUp = () => {
 
         <h3 className='text-center text-white mb-5 italic text-5xl'>wellcome</h3>
         <div className='text-center relative rounded pb-20'>
-          {/* {
+          {
             loading && <span className="loading absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%] z-10 text-center w-20 loading-spinner text-error"></span>
-          } */}
+          }
           <form onSubmit={formSubmit}>
             <h2 className='text-center text-white italic text-xl py-8'>sign up</h2>
             <input type="text" name='username' placeholder="usename" className="input input-bordered  text-xl my-2 input-secondary w-full max-w-xs" /><br />

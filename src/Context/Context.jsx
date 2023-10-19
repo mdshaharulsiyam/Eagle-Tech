@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 export const EagleTechSpotContext = createContext(null)
-import { getAuth, createUserWithEmailAndPassword, updateProfile,signInWithEmailAndPassword ,GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile,signInWithEmailAndPassword ,GoogleAuthProvider, signInWithPopup, onAuthStateChanged,signOut } from "firebase/auth";
 import { app } from '../Firebase/config';
 import Swal from 'sweetalert2';
 const auth = getAuth(app)
@@ -9,7 +9,6 @@ const Context = ({ children }) => {
   const [loading, setloading] = useState(true)
   const [currentuser, setcurrentuser] = useState(null)
   const [currentuserphoto, setcurrentuserphoto] = useState(null)
-  console.log(currentuserphoto)
   const host = "http://localhost:5000"
   const signupuser = (password, email, username) => {
     setloading(true)
@@ -106,7 +105,6 @@ const Context = ({ children }) => {
         setcurrentuser(user.displayName)
         setcurrentuserphoto(user.photoURL)
         setloading(false)
-        console.log(user)
       } else {
         setcurrentuser(null)
         setloading(false)
@@ -116,6 +114,9 @@ const Context = ({ children }) => {
       }
     });
   }, [])
+  const handelsignout = () => {
+    return signOut(auth)
+  }
   const contextData = {
     host,
     signupuser,
@@ -123,7 +124,8 @@ const Context = ({ children }) => {
     currentuser,
     loading,
     signinWithGoogle,
-    currentuserphoto
+    currentuserphoto,
+    handelsignout
   }
   return (
     <EagleTechSpotContext.Provider value={contextData}>

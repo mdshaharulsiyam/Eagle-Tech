@@ -8,7 +8,6 @@ const ProductsDetails = () => {
     const {id} = parems
     const {host}=useContext(EagleTechSpotContext)
     const [productdetails, setproductdetails] = useState([]);
-    console.log(productdetails);
     useEffect(() => {
       fetch(`${host}/productDetails/${id}`).then((res) => res.json()).then((data) => setproductdetails(data))
     }, [])

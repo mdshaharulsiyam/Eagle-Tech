@@ -4,7 +4,6 @@ import { EagleTechSpotContext } from '../Context/Context'
 
 const PrivetRoute = ({ children }) => {
     const localtion = useLocation()
-    console.log(localtion)
     const { loading, currentuser } = useContext(EagleTechSpotContext)
     if (loading) {
         return false

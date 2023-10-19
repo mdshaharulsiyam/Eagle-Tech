@@ -3,7 +3,20 @@ import { BsSearch } from 'react-icons/bs';
 import { useContext } from "react";
 import { EagleTechSpotContext } from "../../../Context/Context";
 const Navber = () => {
-    const {currentuser,currentuserphoto}=useContext(EagleTechSpotContext)
+    const signoutuser = () => {
+        handelsignout().then(() => {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'user signout successfully',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }).catch((error) => {
+
+        });
+    }
+    const {currentuser,currentuserphoto,handelsignout}=useContext(EagleTechSpotContext)
     const menus = <>
         <li className="uppercase mx-1"><NavLink to={'/'}>Home</NavLink></li>
         <li className="uppercase mx-1"><NavLink to={'/addproduct'}>Add Product</NavLink></li>
@@ -12,7 +25,7 @@ const Navber = () => {
          !currentuser && <li className="uppercase mx-1"><NavLink to={'/login'}>Login</NavLink></li>
         }
         {
-         currentuser && <li><button className="uppercase mx-1">logout</button></li>
+         currentuser && <li><button onClick={signoutuser} className="uppercase mx-1">logout</button></li>
         }
     </>
     return (
@@ -55,7 +68,7 @@ const Navber = () => {
                         currentuser && <h2 className="font-extrabold mx-2">{currentuser}</h2>
                     }
                     {
-                        currentuserphoto && <img className="w-10 h-10 rounded-full " src={currentuserphoto} alt=""  />
+                        currentuser && <img className="w-10 h-10 rounded-full " src={currentuserphoto} alt=""  />
                     }
                 </div>
             </div>

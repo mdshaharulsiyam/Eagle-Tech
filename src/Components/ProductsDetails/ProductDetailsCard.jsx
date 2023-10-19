@@ -59,7 +59,6 @@ const ProductDetailsCard = ({ Product }) => {
                         showConfirmButton: false,
                         timer: 1500
                     })
-                    e.target.reset()
                 }
             })
             .catch((error) => console.error('Error:', error));
