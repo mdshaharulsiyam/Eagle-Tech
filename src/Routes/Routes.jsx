@@ -34,15 +34,15 @@ import PrivetRoute from '../ProvetRoute/PrivetRoute';
             },
             {
               path: "/details/:id",
-              element: <Detailspage></Detailspage>,
+              element: <PrivetRoute><Detailspage></Detailspage></PrivetRoute>,
             },
             {
               path: "/update/:id",
-              element: <UpdatePage></UpdatePage>,
+              element: <PrivetRoute><UpdatePage></UpdatePage></PrivetRoute>,
             },
             {
               path: "/mycart",
-              element: <MyCart></MyCart>,
+              element: <PrivetRoute><MyCart></MyCart></PrivetRoute>,
             },
             {
               path: "/login",

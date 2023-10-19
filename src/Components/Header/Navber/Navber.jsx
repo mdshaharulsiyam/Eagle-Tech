@@ -1,11 +1,19 @@
 import { Link, NavLink } from "react-router-dom"
 import { BsSearch } from 'react-icons/bs';
+import { useContext } from "react";
+import { EagleTechSpotContext } from "../../../Context/Context";
 const Navber = () => {
+    const {currentuser,currentuserphoto}=useContext(EagleTechSpotContext)
     const menus = <>
         <li className="uppercase mx-1"><NavLink to={'/'}>Home</NavLink></li>
         <li className="uppercase mx-1"><NavLink to={'/addproduct'}>Add Product</NavLink></li>
         <li className="uppercase mx-1"><NavLink to={'/mycart'}>My Cart</NavLink></li>
-        <li className="uppercase mx-1"><NavLink to={'/login'}>Login</NavLink></li>
+        {
+         !currentuser && <li className="uppercase mx-1"><NavLink to={'/login'}>Login</NavLink></li>
+        }
+        {
+         currentuser && <li><button className="uppercase mx-1">logout</button></li>
+        }
     </>
     return (
         <div className="">
@@ -43,6 +51,12 @@ const Navber = () => {
                         <img className="w-12" src="/Eagle_Tech.png" alt="" />
                         <a className="normal-case text-xl text-red-600 italic font-bold">Eagle Tech</a>
                     </Link>
+                    {
+                        currentuser && <h2 className="font-extrabold mx-2">{currentuser}</h2>
+                    }
+                    {
+                        currentuserphoto && <img className="w-10 h-10 rounded-full " src={currentuserphoto} alt=""  />
+                    }
                 </div>
             </div>
         </div>

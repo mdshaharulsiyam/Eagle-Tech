@@ -7,8 +7,9 @@ const auth = getAuth(app)
 const Context = ({ children }) => {
   const provider = new GoogleAuthProvider();
   const [loading, setloading] = useState(true)
-  const [currentuser, setcurrentuser] = useState(true)
-  const [currentuserphoto, setcurrentuserphoto] = useState(true)
+  const [currentuser, setcurrentuser] = useState(null)
+  const [currentuserphoto, setcurrentuserphoto] = useState(null)
+  console.log(currentuserphoto)
   const host = "http://localhost:5000"
   const signupuser = (password, email, username) => {
     setloading(true)
@@ -121,7 +122,8 @@ const Context = ({ children }) => {
     signwithpasswordandemail,
     currentuser,
     loading,
-    signinWithGoogle
+    signinWithGoogle,
+    currentuserphoto
   }
   return (
     <EagleTechSpotContext.Provider value={contextData}>
