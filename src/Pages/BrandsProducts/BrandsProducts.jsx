@@ -17,7 +17,7 @@ const BrandsProducts = () => {
       <h2 id='servicesectionTitle' className='text-5xl font-semibold italic text-[#FF6969] py-10'>Products</h2>
       <div className='flex flex-wrap justify-center items-center gap-7 py-10'>
         {
-            productdata.map(service=> <Products key={service.id} service={service}></Products>)
+            productdata.map(Product=> <Products key={Product._id} Product={Product}></Products>)
         }
       </div>
     </div>

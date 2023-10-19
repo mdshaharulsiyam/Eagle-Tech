@@ -8,6 +8,7 @@ import Home from '../Pages/Home/Home';
 import Errorelemant from './Errorelemant';
 import AddProduct from '../Pages/AddProduct/AddProduct';
 import BrandsProducts from '../Pages/BrandsProducts/BrandsProducts';
+import Detailspage from '../Pages/Detailspage/Detailspage';
     const router = createBrowserRouter([
         {
           path: "/",
@@ -26,7 +27,10 @@ import BrandsProducts from '../Pages/BrandsProducts/BrandsProducts';
               path: "/brandsproducts/:brand",
               element: <BrandsProducts></BrandsProducts>,
             },
-           
+            {
+              path: "/details/:id",
+              element: <Detailspage></Detailspage>,
+            },
           ],
         },
       ]);
