@@ -9,6 +9,7 @@ import Errorelemant from './Errorelemant';
 import AddProduct from '../Pages/AddProduct/AddProduct';
 import BrandsProducts from '../Pages/BrandsProducts/BrandsProducts';
 import Detailspage from '../Pages/Detailspage/Detailspage';
+import UpdatePage from '../Pages/UpdatePage/UpdatePage';
     const router = createBrowserRouter([
         {
           path: "/",
@@ -30,6 +31,10 @@ import Detailspage from '../Pages/Detailspage/Detailspage';
             {
               path: "/details/:id",
               element: <Detailspage></Detailspage>,
+            },
+            {
+              path: "/update/:id",
+              element: <UpdatePage></UpdatePage>,
             },
           ],
         },

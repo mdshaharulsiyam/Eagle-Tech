@@ -92,7 +92,7 @@ const Addproductform = () => {
                 <input type="text" name='image' placeholder="image url" className="input input-bordered input-primary w-full max-w-xs m-1" /><br />
                 <input type="flot" name='price' placeholder="Price" className="input input-bordered input-primary w-full max-w-xs m-1" />
                 <input type="flot" name='Rating' placeholder="Rating 1 to 5" className="input input-bordered input-primary w-full max-w-xs m-1" /><br />
-                <textarea name='description' className="textarea textarea-primary w-full max-w-[650px] m-1" placeholder="description"></textarea><br />
+                <textarea name='description' className="textarea textarea-primary w-full h-60 max-w-[650px] m-1" placeholder="description"></textarea><br />
                 <button className="btn btn-outline btn-success">add products</button>
             </form>
         </div>
