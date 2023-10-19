@@ -66,7 +66,8 @@ const Addproductform = () => {
 
     }
     return (
-        <div className='bg-[url("/ipbg.jpg")]'>
+        <div className='mt-14'>
+            <h2 className='text-center text-2xl font-bold uppercase my-3'>add product</h2>
             <form onSubmit={addproduct} className='container mx-auto text-center py-10'>
                 <input type="text" placeholder="product Name" name='product' className="input input-bordered input-primary w-full max-w-xs m-1" />
                 <select name='brand' className="select select-primary w-full max-w-xs m-1">
