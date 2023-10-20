@@ -1,8 +1,8 @@
-# Elegance Wedding’s
+# Eagle Tech
 
-## [ Eagle Tech ](https://tangerine-gnome-5bec35.netlify.app/)
+## [ Eagle Tech ](https://phenomenal-cucurucho-5e2af2.netlify.app/)
 
-Click here for see project: [https://tangerine-gnome-5bec35.netlify.app/](https://tangerine-gnome-5bec35.netlify.app/)
+Click here for see project: [https://phenomenal-cucurucho-5e2af2.netlify.app/](https://phenomenal-cucurucho-5e2af2.netlify.app/)
 
 
 # projects fetures
