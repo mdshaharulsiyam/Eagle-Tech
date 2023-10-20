@@ -9,7 +9,7 @@ const Context = ({ children }) => {
   const [loading, setloading] = useState(true)
   const [currentuser, setcurrentuser] = useState(null)
   const [currentuserphoto, setcurrentuserphoto] = useState(null)
-  const host = "https://new-folder-2ab01n5hi-mdshaharulsiyams-projects.vercel.app"
+  const host = "https://new-folder-five-blush.vercel.app"
   const signupuser = (password, email, username) => {
     setloading(true)
     createUserWithEmailAndPassword(auth, email, password)
